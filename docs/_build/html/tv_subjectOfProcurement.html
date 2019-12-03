@@ -1,0 +1,221 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="uk">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>tv_subjectOfProcurement &#8212; DASU indicators 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Індекс" href="genindex.html" />
+    <link rel="search" title="Пошук" href="search.html" />
+    <link rel="next" title="Перелік аналітичних таблиць" href="analytical_tables.html" />
+    <link rel="prev" title="Перелік транзакційних змінних" href="transactional_variables.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навігація</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Загальний індекс"
+             accesskey="I">індекс</a></li>
+        <li class="right" >
+          <a href="analytical_tables.html" title="Перелік аналітичних таблиць"
+             accesskey="N">наступний</a> |</li>
+        <li class="right" >
+          <a href="transactional_variables.html" title="Перелік транзакційних змінних"
+             accesskey="P">попередній</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">DASU indicators 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="transactional_variables.html" accesskey="U">Перелік транзакційних змінних</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="tv-subjectofprocurement">
+<span id="id1"></span><h1>tv_subjectOfProcurement<a class="headerlink" href="#tv-subjectofprocurement" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="id2">
+<h2>Суть транзакційної змінної<a class="headerlink" href="#id2" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Ця транзакційна змінна відображає предмет закупівлі у процедурі віповідно до <a class="reference external" href="http://zakon0.rada.gov.ua/laws/show/z0448-16">наказу МЕРТ №454</a>, згідно з Єдиним закупівельним словником.</p>
+</div>
+<div class="section" id="id3">
+<h2>Об’єкт характеристики<a class="headerlink" href="#id3" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Дана транзакційна змінна характеризує <em>процедуру (тендер)</em>.</p>
+</div>
+<div class="section" id="id4">
+<h2>Форма транзакційної змінної<a class="headerlink" href="#id4" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Транзакційна змінна кожній процедурі (тендеру) ставить у відповідніть код предмета закупівлі відповідно до Єдиного закупівельного словника.</p>
+<p>У таблиці наведено приклад того, як саме виглядає транзакційна змінна.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Тендер</td>
+<td>tv_subjectOfProcurement</td>
+</tr>
+<tr class="row-even"><td>Тендер 1</td>
+<td>32310000-9</td>
+</tr>
+<tr class="row-odd"><td>Тендер 2</td>
+<td>31610000-5</td>
+</tr>
+<tr class="row-even"><td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h2>Розрахунок транзакційної змінної<a class="headerlink" href="#id5" title="Постійне посилання на цей заголовок">¶</a></h2>
+<div class="section" id="id6">
+<h3>Джерела даних для розрахунку<a class="headerlink" href="#id6" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Для розрахунку індикатора вікористовуються наступні джерела даних:</p>
+<ul class="simple">
+<li>API модуля тендеринга електронної системи закупівель</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Поля для розрахунку<a class="headerlink" href="#id7" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Для розрахунку індикатора використовуються наступні поля з API модуля тендеринга:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">data.items</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">data.items.classification.id</span></code></li>
+</ul>
+</div>
+<div class="section" id="id8">
+<h3>Формула розрахунку<a class="headerlink" href="#id8" title="Постійне посилання на цей заголовок">¶</a></h3>
+<div class="section" id="id9">
+<h4>Поняття батьківскького коду<a class="headerlink" href="#id9" title="Постійне посилання на цей заголовок">¶</a></h4>
+<p>Єдиний закупівельний словник має деревоподібну структуру. Усі коди єдиного закупівельного словника, деталізовані до 3 цифр або більше, мають батьківський код (коди, деталізовані до 2 цифр, є коренями дерева). Наприклад, код 31610000-5 має батьківський код 31600000-2. А код 31000000-6 не має батьківського коду, оскільки він є кореневим.</p>
+<p>Декілька різних кодів можуть мати спільний батьківський код. Наприклад, коди 45100000-8 і 45200000-9 мають спільний батьківський код 45000000-7.</p>
+</div>
+<div class="section" id="id10">
+<h4>Алгоритм розрахунку транзакційної змінної<a class="headerlink" href="#id10" title="Постійне посилання на цей заголовок">¶</a></h4>
+<ol class="arabic">
+<li><p class="first">Для всіх об’єктів <code class="docutils literal notranslate"><span class="pre">data.items</span></code> визначити найдовший спільний батьківський код відповідно до поля <code class="docutils literal notranslate"><span class="pre">data.items.classification.id</span></code></p>
+</li>
+<li><p class="first">Визначити категорію закупівлі за найдовшим спільним батьківським кодом відповідно до <a class="reference internal" href="gsw_formula.html#gsw-formula"><span class="std std-ref">порядку визначення</span></a></p>
+</li>
+<li><p class="first">У випадку, коли найдовший спільний батьківський код відповідає предмету закупівлі <em>робіт</em>:</p>
+<blockquote>
+<div><p>а) Якщо найдовший спільний батьківський код деталізований до 6 цифри або більше, то
+необхідно взяти батьківський код цього коду, деталізований до 5 цифри</p>
+<p>б) Якщо найдовший спільний батьківський код деталізований до 5 цифри або менше, то цей код
+береться без змін</p>
+</div></blockquote>
+</li>
+<li><p class="first">У випадку, коли найдовший спільний батьківський код відповідає предмету закупівлі <em>товарів</em> або <em>послуг</em>:</p>
+<blockquote>
+<div><p>а) Якщо найдовший спільний батьківський код починається на 3361, 3362, 3363, 3364, 3365,
+3366, 3367, 33691, 33692, то:</p>
+<blockquote>
+<div><p>а.1) Якщо найдовший спільний батьківський код деталізований до 4 цифри або більше, то
+необхідно взяти батьківський код цього коду, деталізований до 3 цифри</p>
+<p>а.2) Якщо найдовший спільний батьківський код деталізований до 3 цифри або менше, то цей
+код береться без змін</p>
+</div></blockquote>
+<p>б) Якщо найдовший спільний батьківський код починається на цифри, що не входять до переліку
+з пункту <em>а)</em>, то:</p>
+<blockquote>
+<div><p>б.1) Якщо найдовший спільний батьківський код деталізований до 5 цифри або більше, то
+необхідно взяти батьківський код цього коду, деталізований до 4 цифри</p>
+<p>б.2) Якщо найдовший спільний батьківський код деталізований до 4 цифри або менше, то цей
+код береться без змін</p>
+</div></blockquote>
+</div></blockquote>
+</li>
+<li><p class="first">Отриманий код є кодом предмету закупівлі та значенням транзакційної змінної</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Зміст</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">tv_subjectOfProcurement</a><ul>
+<li><a class="reference internal" href="#id2">Суть транзакційної змінної</a></li>
+<li><a class="reference internal" href="#id3">Об’єкт характеристики</a></li>
+<li><a class="reference internal" href="#id4">Форма транзакційної змінної</a></li>
+<li><a class="reference internal" href="#id5">Розрахунок транзакційної змінної</a><ul>
+<li><a class="reference internal" href="#id6">Джерела даних для розрахунку</a></li>
+<li><a class="reference internal" href="#id7">Поля для розрахунку</a></li>
+<li><a class="reference internal" href="#id8">Формула розрахунку</a><ul>
+<li><a class="reference internal" href="#id9">Поняття батьківскького коду</a></li>
+<li><a class="reference internal" href="#id10">Алгоритм розрахунку транзакційної змінної</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Попередній розділ</h4>
+  <p class="topless"><a href="transactional_variables.html"
+                        title="Попередній розділ">Перелік транзакційних змінних</a></p>
+  <h4>Наступна тема</h4>
+  <p class="topless"><a href="analytical_tables.html"
+                        title="наступний розділ">Перелік аналітичних таблиць</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Ця сторінка</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/tv_subjectOfProcurement.rst.txt"
+            rel="nofollow">Відобразити вихідний текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Швидкий пошук</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Вперед" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навігація</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Загальний індекс"
+             >індекс</a></li>
+        <li class="right" >
+          <a href="analytical_tables.html" title="Перелік аналітичних таблиць"
+             >наступний</a> |</li>
+        <li class="right" >
+          <a href="transactional_variables.html" title="Перелік транзакційних змінних"
+             >попередній</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">DASU indicators 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="transactional_variables.html" >Перелік транзакційних змінних</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Data Path Analytics.
+      Створено з використанням <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+  </body>
+</html>

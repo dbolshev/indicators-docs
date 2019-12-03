@@ -1,0 +1,234 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="uk">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>DASU-1 Переговорна процедура проведена за відсутності двох неуспішних відкритих процедур &#8212; DASU indicators 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Індекс" href="genindex.html" />
+    <link rel="search" title="Пошук" href="search.html" />
+    <link rel="next" title="DASU-2-1 Закупівля товарів та послуг кваліфікується як відкриті торги (EU), але замовником обрана інша процедура" href="DASU-2-1.html" />
+    <link rel="prev" title="Перелік індикаторів" href="indicators.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навігація</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Загальний індекс"
+             accesskey="I">індекс</a></li>
+        <li class="right" >
+          <a href="DASU-2-1.html" title="DASU-2-1 Закупівля товарів та послуг кваліфікується як відкриті торги (EU), але замовником обрана інша процедура"
+             accesskey="N">наступний</a> |</li>
+        <li class="right" >
+          <a href="indicators.html" title="Перелік індикаторів"
+             accesskey="P">попередній</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">DASU indicators 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="indicators.html" accesskey="U">Перелік індикаторів</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="dasu-1">
+<h1>DASU-1 Переговорна процедура проведена за відсутності двох неуспішних відкритих процедур<a class="headerlink" href="#dasu-1" title="Постійне посилання на цей заголовок">¶</a></h1>
+<div class="section" id="id1">
+<h2>Суть індикатора<a class="headerlink" href="#id1" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Даний індикатор виявляє ситуації, коли замовником здійснено переговорну процедуру з причиною «двічі відмінена відкрита процедура», але насправді цей замовник по цьому предмету закупівлі не мав двічі відміненої процедури.</p>
+</div>
+<div class="section" id="id2">
+<h2>Законодавче обґрунтування індикатора<a class="headerlink" href="#id2" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Ненаявність двох неуспішних відкритих процедур при проведенні переговорної процедури з причиною «двічі відмінена відкрита процедура» є порушенням пункту 4 частини 1 статті 35 Закону України «Про публічні закупівлі».</p>
+</div>
+<div class="section" id="id3">
+<h2>Підстава для розробки індикатора<a class="headerlink" href="#id3" title="Постійне посилання на цей заголовок">¶</a></h2>
+<p>Цей індикатор було розроблено, оскільки система електронних закупівель не передбачає перевірки наявності двох неуспішних відкритих процедур, якщо для проведення переговорної процедури вказується причина «двічі відмінена відкрита процедура».</p>
+</div>
+<div class="section" id="id4">
+<h2>Методологія розрахунку індикатора<a class="headerlink" href="#id4" title="Постійне посилання на цей заголовок">¶</a></h2>
+<div class="section" id="id5">
+<h3>Рівень розрахунку<a class="headerlink" href="#id5" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Індикатор розраховується на рівні <em>тендера</em>.</p>
+</div>
+<div class="section" id="id6">
+<h3>Джерела даних для розрахунку<a class="headerlink" href="#id6" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Для розрахунку індикатора вікористовуються наступні джерела даних:</p>
+<ul class="simple">
+<li>API модуля тендеринга електронної системи закупівель</li>
+<li>Аналітична таблиця <a class="reference internal" href="tbl_unsuccessfulAbove.html#tbl-unsuccessfulabove"><span class="std std-ref">tbl_unsuccessfulAbove</span></a></li>
+<li>Транзакційна змінна <a class="reference internal" href="tv_tenderCPV.html#tv-tendercpv"><span class="std std-ref">tv_tenderCPV</span></a></li>
+<li>Транзакційна змінна <a class="reference internal" href="tv_procuringEntity.html#tv-procuringentity"><span class="std std-ref">tv_procuringEntity</span></a></li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>Типи процедур<a class="headerlink" href="#id7" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Індикатор розраховується для наступних типів процедур:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">negotiation</span></code> - <em>переговорна процедура</em></li>
+<li><code class="docutils literal notranslate"><span class="pre">negotiation.quick</span></code> - <em>прискорена переговорна процедура</em></li>
+</ul>
+<div class="section" id="id8">
+<h4>Причина проведення переговорної процедури<a class="headerlink" href="#id8" title="Постійне посилання на цей заголовок">¶</a></h4>
+<p>До уваги беруться процедури, в яких причина <code class="docutils literal notranslate"><span class="pre">data.cause</span></code> вказана як <code class="docutils literal notranslate"><span class="pre">twiceUnsuccessful</span></code>, тобто «двічі відмінена відкрита процедура».</p>
+</div>
+</div>
+<div class="section" id="id9">
+<h3>Типи замовників<a class="headerlink" href="#id9" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Індикатор розраховується для загальних замовників (<code class="docutils literal notranslate"><span class="pre">general</span></code>).</p>
+</div>
+<div class="section" id="id10">
+<h3>Стадії процедур<a class="headerlink" href="#id10" title="Постійне посилання на цей заголовок">¶</a></h3>
+<div class="section" id="id11">
+<h4>Подія, що вмикає розрахунок індикатора<a class="headerlink" href="#id11" title="Постійне посилання на цей заголовок">¶</a></h4>
+<p>Подія, що вмикає розрахунок індикатора - публікація замовником у електронній системі закупівель наміру про укладення договору з постачальником.</p>
+</div>
+<div class="section" id="id12">
+<h4>Подія, що вимикає розрахунок індикатора<a class="headerlink" href="#id12" title="Постійне посилання на цей заголовок">¶</a></h4>
+<p>Розрахунок індикатора вимикається одразу після того, як він був порахований вперше.</p>
+</div>
+<div class="section" id="id13">
+<h4>Статуси процедур<a class="headerlink" href="#id13" title="Постійне посилання на цей заголовок">¶</a></h4>
+<p>Виходячи з подій, що вмикають та вимикають розрахунок індикатора, маємо наступні умови розрахунку:</p>
+<ul class="simple">
+<li>Індикатор розраховується, якщо в json-документі, що відповідає процедурі, присутній блок <code class="docutils literal notranslate"><span class="pre">data.awards</span></code></li>
+<li>Індикатор розраховується для даної процедури тоді і тільки тоді, коли він ще не був ніколи порахований для цієї процедури.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="id14">
+<h3>Частота розрахунку<a class="headerlink" href="#id14" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Індикатор розраховується тільки один раз при публікації замовником наміру про укладення договору.</p>
+</div>
+<div class="section" id="id15">
+<h3>Поля для розрахунку<a class="headerlink" href="#id15" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Для розрахунку індикатора використовуються наступні поля з API модуля тендеринга:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">data.cause</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">data.awards</span></code></li>
+</ul>
+<p>Для розрахунку індикатора використовуються наступні транзакційні змінні:</p>
+<ul class="simple">
+<li><a class="reference internal" href="tv_tenderCPV.html#tv-tendercpv"><span class="std std-ref">tv_tenderCPV</span></a></li>
+<li><a class="reference internal" href="tv_procuringEntity.html#tv-procuringentity"><span class="std std-ref">tv_procuringEntity</span></a></li>
+</ul>
+<p>Для розрахунку індикатора використовуються наступні аналітичні таблиці:</p>
+<ul class="simple">
+<li><a class="reference internal" href="tbl_unsuccessfulAbove.html#tbl-unsuccessfulabove"><span class="std std-ref">tbl_unsuccessfulAbove</span></a></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>Формула розрахунку<a class="headerlink" href="#id16" title="Постійне посилання на цей заголовок">¶</a></h3>
+<p>Індикатор розраховується наступним чином:</p>
+<ol class="arabic simple">
+<li>Для даного замовника <a class="reference internal" href="tv_procuringEntity.html#tv-procuringentity"><span class="std std-ref">tv_procuringEntity</span></a> та предмета закупівлі <a class="reference internal" href="tv_tenderCPV.html#tv-tendercpv"><span class="std std-ref">tv_tenderCPV</span></a> у аналітичній таблиці <a class="reference internal" href="tbl_unsuccessfulAbove.html#tbl-unsuccessfulabove"><span class="std std-ref">tbl_unsuccessfulAbove</span></a> шукається відповідне число неуспішних відкритих процедур від поточної дати до дати попередньої переговорної процедури цього замовника по цьому предмету закупівлі (або від поточної дати до дати, що передує поточній 1 рік, якщо такої переговорної процедури немає).</li>
+<li>Якщо знайдене у аналітичній таблиці число процедур більше або дорівнює 2, то індикатор приймає значення <code class="docutils literal notranslate"><span class="pre">0</span></code>.</li>
+<li>Якщо знайдене у аналітичній таблиці число процедур менше 2 або запис для цього замовника по цоьму предмету закупівлі взагалі не знайдений, то індикатор приймає значення <code class="docutils literal notranslate"><span class="pre">1</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="id17">
+<h3>Фактори, що впливають на неточність розрахунку<a class="headerlink" href="#id17" title="Постійне посилання на цей заголовок">¶</a></h3>
+<ol class="arabic simple">
+<li>Індикатор може бути порахований неточно у випадках, коли замовники в окремих сферах господарювання і організації, що не є замовниками, помилково визначають себе в системі як загальні замовники.</li>
+<li>У четвертому пункті частини 1 статті 35 Закону України «Про публічні закупівлі» чітко не вказано часовий проміжок, в якому мають знаходитится відмінені відкриті процедури, щоб це могло служити приводом для проведення переговорної процерури. Було прийняте рішення в якості часового проміжку брати проміжок від поточної дати до дати, що передує поточній на 1 рік, або до дати проведення попередньої переговорної процедури даного замовника по даному предмету закупівлі.</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Зміст</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DASU-1 Переговорна процедура проведена за відсутності двох неуспішних відкритих процедур</a><ul>
+<li><a class="reference internal" href="#id1">Суть індикатора</a></li>
+<li><a class="reference internal" href="#id2">Законодавче обґрунтування індикатора</a></li>
+<li><a class="reference internal" href="#id3">Підстава для розробки індикатора</a></li>
+<li><a class="reference internal" href="#id4">Методологія розрахунку індикатора</a><ul>
+<li><a class="reference internal" href="#id5">Рівень розрахунку</a></li>
+<li><a class="reference internal" href="#id6">Джерела даних для розрахунку</a></li>
+<li><a class="reference internal" href="#id7">Типи процедур</a><ul>
+<li><a class="reference internal" href="#id8">Причина проведення переговорної процедури</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id9">Типи замовників</a></li>
+<li><a class="reference internal" href="#id10">Стадії процедур</a><ul>
+<li><a class="reference internal" href="#id11">Подія, що вмикає розрахунок індикатора</a></li>
+<li><a class="reference internal" href="#id12">Подія, що вимикає розрахунок індикатора</a></li>
+<li><a class="reference internal" href="#id13">Статуси процедур</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id14">Частота розрахунку</a></li>
+<li><a class="reference internal" href="#id15">Поля для розрахунку</a></li>
+<li><a class="reference internal" href="#id16">Формула розрахунку</a></li>
+<li><a class="reference internal" href="#id17">Фактори, що впливають на неточність розрахунку</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Попередній розділ</h4>
+  <p class="topless"><a href="indicators.html"
+                        title="Попередній розділ">Перелік індикаторів</a></p>
+  <h4>Наступна тема</h4>
+  <p class="topless"><a href="DASU-2-1.html"
+                        title="наступний розділ">DASU-2-1 Закупівля товарів та послуг кваліфікується як відкриті торги (EU), але замовником обрана інша процедура</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Ця сторінка</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/DASU-1.rst.txt"
+            rel="nofollow">Відобразити вихідний текст</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Швидкий пошук</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Вперед" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Навігація</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Загальний індекс"
+             >індекс</a></li>
+        <li class="right" >
+          <a href="DASU-2-1.html" title="DASU-2-1 Закупівля товарів та послуг кваліфікується як відкриті торги (EU), але замовником обрана інша процедура"
+             >наступний</a> |</li>
+        <li class="right" >
+          <a href="indicators.html" title="Перелік індикаторів"
+             >попередній</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">DASU indicators 0.0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="indicators.html" >Перелік індикаторів</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Data Path Analytics.
+      Створено з використанням <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.2.
+    </div>
+  </body>
+</html>
