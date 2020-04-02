@@ -99,9 +99,9 @@ RISK-1-13. Невиконання замовником рішення орган
 Формула розрахунку
 ==================
 
-1. Якщо в процедурі немає жодного блоку data.complaints або data.awards.complaints. що мають ``complaints.type='complaint'`` та ``complaints.status != 'satisfied'``, індикатор приймає значення ``-2``. Розрахунок завершується.
+1. Якщо в процедурі немає жодного блоку data.complaints або data.awards.complaints. що мають ``complaints.type='complaint'`` та ``complaints.status = 'satisfied'``, індикатор приймає значення ``-2``. Розрахунок завершується.
 
-2. Якщо в процедурі немає жодного блоку data.complaints або data.awards.complaints. що мають ``complaints.type='complaint'`` та ``complaints.status = 'satisfied'``, то робимо наступне.
+2. Якщо в процедурі присутні блоки data.complaints або data.awards.complaints. що мають ``complaints.type='complaint'`` та ``complaints.status = 'satisfied'``, то для кожного такого блоку робимо наступне.
 
 2.1. Для кожного такого блоку порівнюємо ``complaints.dateDesision`` з поточною датой. Якщо від ``complaints.dateDesision`` до поточної дати пройшло більше 30 днів, індикатор дорівнює ``1``. Якщо пройшло менше 30 днів, індикатор дорівнює ``0``.
 
