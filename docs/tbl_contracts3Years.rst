@@ -69,20 +69,26 @@ tbl_contracts3Years
 - ``data.suppliers.identifier.id``
 - ``data.items.classification.id``
 - ``data.value.amount``
+- ``data.status``
+- ``data.terminationDetails``
 
 Формула розрахунку
 ==================
 
 1. Вибираються тільки контракти, що заключені в межах процедур, що мають типи ``data.procurementMethodType='aboveThresholdUA'`` або ``data.procurementMethodType='aboveThresholdEU'``.
 
-2. Залишаємо тільки контракти, що були підписані не пізніше, ніж 3 роки тому від поточної дати.
+2. Залишаємо контракти, що мають статус ``data.status='active'``.
 
-3. Вибираємо ідентифікатор замовника: конкатенація ``data.procuringEntity.identifier.scheme`` та ``data.procuringEntity.identifier.id``.
+3. Залишаємо контракти, що мають статус ``data.status='terminated'`` та не мають елемента ``data.terminationDetails``.
 
-4. Вибираємо ідентифікатор переможця: конкатенація ``data.suppliers.identifier.scheme`` та ``data.suppliers.identifier.id``
+4. Залишаємо тільки контракти, що були підписані не пізніше, ніж 3 роки тому від поточної дати.
+
+5. Вибираємо ідентифікатор замовника: конкатенація ``data.procuringEntity.identifier.scheme`` та ``data.procuringEntity.identifier.id``.
+
+6. Вибираємо ідентифікатор переможця: конкатенація ``data.suppliers.identifier.scheme`` та ``data.suppliers.identifier.id``
   
-5. Вибираємо коди предметів закупівлі: усі ``data.items.classification.id``
+7. Вибираємо коди предметів закупівлі: усі ``data.items.classification.id``
   
-6. Вибираємо суму контракту ``data.value.amount``.
+8. Вибираємо суму контракту ``data.value.amount``.
 
-7. Проводимо групування з усіх знайдених контрактів по замовнику, переможцю та коду предмету закупівлі обираючи найранішу дату підписання та суму контракта, що відповідає найранішій даті.
+9. Проводимо групування з усіх знайдених контрактів по замовнику, переможцю та коду предмету закупівлі обираючи найранішу дату підписання та суму контракта, що відповідає найранішій даті.
