@@ -108,7 +108,7 @@ RISK-1-7-1. Перевищення продовженого строку роз�
 
 2.1. Якщо в секції  data.awards, що посилається на лот через ``data.awards.lotID``, де data.awards.status = 'pending', немає документа, у якого data.awards.documents.format != 'application/pkcs7-signature' та data.awards.documents.format != 'application/yaml'.
 
-2.2. Якщо  в секції  data.awards, що посилається на лот через ``data.awards.lotID``, де data.awards.status = 'pending', присутній документ, у якого data.awards.documents.format != 'application/pkcs7-signature' та data.awards.documents.format != 'application/yaml' та з моменту переходу його в статус 'pending' пройшло 20 або менше *робочих* днів.
+2.2. Якщо  в секції  data.awards, що посилається на лот через ``data.awards.lotID``, де data.awards.status = 'pending', присутній документ, у якого data.awards.documents.format != 'application/pkcs7-signature' та data.awards.documents.format != 'application/yaml' та з моменту переходу його в статус 'pending' пройшло 20 або менше *робочих* днів + 1 *календарний* день.
 
 2.3. Для об'єктів ``data.awards``, в яких присутній блок ``data.awards.complaints``
 
