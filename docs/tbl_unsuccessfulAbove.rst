@@ -83,7 +83,7 @@ tbl_unsuccessfulAbove
     а) Для даного замовника та даного предмету закупівлі необхідно знайти останню (найближчу до 
     поточної дати) завершену переговорну процедуру цього ж замовника по цьому ж предмету 
     закупівлі. Ознака переговорної процедури: ``data.procurementMethodType = 'negotiation'`` або 
-    ``data.procurementMethodType = 'negotiation.quick'``. Ознака завершеної процедури: 
+    ``data.procurementMethodType = 'negotiation.quick'`` тa має ``data.cause='twiceUnsuccessful'``. Ознака завершеної процедури: 
     ``data.status = 'complete'``. Близькість процедури до поточної дати визначається з поля 
     ``data.date``.
 
