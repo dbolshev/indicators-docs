@@ -94,7 +94,7 @@ tbl_noNeed
 
 7. Якщо знайденому блоку ``data.cancellations.cancellationOf='lot'``, то вибираємо усі ``data.items.classification.id``, що відносяться до лота ``data.items.relatedLot=data.cancellations.relatedLot``
 
-8. Знаходимо ідентифікатор замовника - конкатенація ``data.procuringEntity.identifier.scheme`` та ``data.procuringEntity.identifier.id``. Знаходиться очікувана вартість процедури ``data.value.amount``.
+8. Знаходимо ідентифікатор замовника - конкатенація ``data.procuringEntity.identifier.scheme`` та ``data.procuringEntity.identifier.id``.
 
 10. Групуємо дані по ідентифікатору замовника та коду CPV. Результат заносимо в таблицю.
   
