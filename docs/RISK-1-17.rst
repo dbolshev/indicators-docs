@@ -114,17 +114,22 @@ RISK-1-17. Несвоєчасне укладання замовником дог
 
 4. Якщо хоча б в одном з об'єктів ``data.awards``, що посилається на лот, є об'єкт ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateAccepted`` та у якого *відсутнє* поле ``data.awards.complaints.dateDecision``, індикатор приймає значення ``-2``. Розрахунок завершується.
 
-5. Індикатор приймає значення ``1`` для лота, якщо виконуються всі нижченаведені умови.
+5. Індикатор приймає значення ``1`` для лота, якщо замовник не завантажив документи договору (п. 6) та пройшла максимально дозволена кількість днів для підписання та публікації договору (будь який підпункт з п.7).
 
-5.1. На цей лот через ланцюг ``data.contracts.awardID``-``data.awards.lotID`` *не посилається* жоден об'єкт ``data.contracts``, у якого ``data.contracts.documents.format != 'application/pkcs7-signature'`` та ``data.contracts.status = 'active'``.
+6. Не розміщення замовником документів договору визначаємо так:
 
-5.2. Знаходимо  ідентификатор блоку ``data.contracts.id``. За ним знаходимо об'єкт в модулі контрактингу. Знаходимо там усі документи ``data.documents`` такі, що ``data.documents.documentOf = 'contract'``. Таких документів немає, або серед них є тільки ``data.contracts.documents.format = 'application/pkcs7-signature'``.
+  6.1. На цей лот через ланцюг ``data.contracts.awardID``-``data.awards.lotID`` *не посилається* жоден об'єкт ``data.contracts``, у якого ``data.contracts.documents.format != 'application/pkcs7-signature'`` та ``data.contracts.status = 'active'``.
 
-5.3. Для лотів, об'єкти ``data.awards`` яких не містять блок ``data.awards.complaints`` від поточної дати до ``data.awards.date`` з блоку, що має ``data.awards.status = 'active'``, пройшло більше ніж 35 + 3 робочі дні (відраховуємо спочатку 35 календарних днів, а потім від отриманої дати відраховуємо ще 3 робочі дні). 
+  6.2. Знаходимо  ідентификатор блоку ``data.contracts.id``. За ним знаходимо об'єкт в модулі контрактингу. Знаходимо там усі документи ``data.documents`` такі, що ``data.documents.documentOf = 'contract'``. Таких документів немає, або серед них є тільки ``data.contracts.documents.format = 'application/pkcs7-signature'``.
 
-5.4. Для лотів, у яких хоча б один об'єкт ``data.awards`` містить блок ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateAccepted`` та у якого *присутнє* поле ``data.awards.complaints.dateDecision``, проводимо розрахунок днів як у п. 5.3., але виключаємо з розрахунку усі проміжки від ``data.awards.complaints.dateAccepted`` до ``data.awards.complaints.dateDecision`` (в проміжок включаємо обидві дати).
+7. Дозволений часовий проміжок для підписання договору визначаємо так:
 
-6. В інших випадках індикатор дорівнює ``0``.
+  7.1. Для лотів, об'єкти ``data.awards`` яких не містять блок ``data.awards.complaints`` від поточної дати до ``data.awards.date`` з блоку, що має ``data.awards.status = 'active'``, пройшло більше ніж 35 + 3 робочі дні (відраховуємо спочатку 20 календарних днів, а потім від отриманої дати відраховуємо ще 3 робочі дні). 
+
+  7.2. Для лотів, у яких хоча б один об'єкт ``data.awards`` містить блок ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateAccepted`` та у якого *присутнє* поле ``data.awards.complaints.dateDecision``, проводимо розрахунок днів як у п. 7.1., але виключаємо з розрахунку усі проміжки від ``data.awards.complaints.dateAccepted`` до ``data.awards.complaints.dateDecision`` (в проміжок включаємо обидві дати).
+
+8. В інших випадках індикатор дорівнює ``0``.
+
 
 Фактори, що впливають на неточність розрахунку
 ==============================================
