@@ -107,6 +107,8 @@ RISK-1-12. Перевищення строку розгляду тендерни
 
 2.1. Для об'єктів ``data.awards``, в яких присутній блок ``data.awards.complaints``
 
+2.2. Якщо статус лота ``data.lots.status='cancelled'`` або ``data.lots.status='unsuccessful'``.
+
 3. Індикатор приймає значення ``0``, якщо виконується нижченаведена умова.
 
 3.1. Якщо в жодній секції  data.awards, що посилається на лот через ``data.awards.lotID``, немає об'єктів, де data.awards.status = 'pending'.
