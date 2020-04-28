@@ -94,6 +94,7 @@ RISK-1-7. Перевищення строку розгляду тендерно�
 - ``data.awards.documents.author``
 - ``data.awards.lotID``
 - ``data.awards.complaints``
+- ``data.lots.status``
 
 Робота з датами
 ===============
@@ -114,6 +115,8 @@ RISK-1-7. Перевищення строку розгляду тендерно�
 2.2. Для об'єктів ``data.awards``, в яких присутній блок ``data.awards.complaints``
 
 2.3. Якщо в секції ``data.awards``, де ``data.awards.status = 'pending'``, є документ, у якого ``data.documents.format != 'application/pkcs7-signature'``  та ``data.awards.documents.author != 'bots'``.
+
+2.4. Якщо статус лота ``data.lots.status='cancelled'`` або ``data.lots.status='unsuccessful'``.
 
 3. Індикатор приймає значення ``0``, якщо виконуються нижченаведена умова.
 
