@@ -94,7 +94,7 @@ RISK-1-17. Несвоєчасне укладання замовником дог
 - ``data.contracts.awardID``
 - ``data.contracts.status``
 - ``data.awards.complaints.type``
-- ``data.awards.complaints.dateAccepted``
+- ``data.awards.complaints.dateSubmitted``
 - ``data.awards.complaints.dateDecision``
 
 Робота з датами
@@ -112,7 +112,7 @@ RISK-1-17. Несвоєчасне укладання замовником дог
 
 3. Якщо на лот через поле ``data.awards.lotID`` не посилається об'єкт ``data.awards``, у якого ``data.awards.status = 'active'``, індикатор приймає значення ``-2``. Розрахунок завершується.
 
-4. Якщо хоча б в одном з об'єктів ``data.awards``, що посилається на лот, є об'єкт ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateAccepted`` та у якого *відсутнє* поле ``data.awards.complaints.dateDecision``, індикатор приймає значення ``-2``. Розрахунок завершується.
+4. Якщо хоча б в одном з об'єктів ``data.awards``, що посилається на лот, є об'єкт ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateSubmitted`` та у якого *відсутнє* поле ``data.awards.complaints.dateDecision``, індикатор приймає значення ``-2``. Розрахунок завершується.
 
 5. Індикатор приймає значення ``1`` для лота, якщо замовник не завантажив документи договору (п. 6) та пройшла максимально дозволена кількість днів для підписання та публікації договору (будь який підпункт з п.7).
 
@@ -126,7 +126,7 @@ RISK-1-17. Несвоєчасне укладання замовником дог
 
   7.1. Для лотів, об'єкти ``data.awards`` яких не містять блок ``data.awards.complaints`` від поточної дати до ``data.awards.date`` з блоку, що має ``data.awards.status = 'active'``, пройшло більше ніж 35 + 3 робочі дні (відраховуємо спочатку 20 календарних днів, а потім від отриманої дати відраховуємо ще 3 робочі дні). 
 
-  7.2. Для лотів, у яких хоча б один об'єкт ``data.awards`` містить блок ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateAccepted`` та у якого *присутнє* поле ``data.awards.complaints.dateDecision``, проводимо розрахунок днів як у п. 7.1., але виключаємо з розрахунку усі проміжки від ``data.awards.complaints.dateAccepted`` до ``data.awards.complaints.dateDecision`` (в проміжок включаємо обидві дати).
+  7.2. Для лотів, у яких хоча б один об'єкт ``data.awards`` містить блок ``data.awards.complaints``, що має ``data.awards.complaints.type='complaint'``, має ``data.awards.complaints.dateSubmitted`` та у якого *присутнє* поле ``data.awards.complaints.dateDecision``, проводимо розрахунок днів як у п. 7.1., але виключаємо з розрахунку усі проміжки від ``data.awards.complaints.dateSubmitted`` до ``data.awards.complaints.dateDecision`` (в проміжок включаємо обидві дати).
 
 8. В інших випадках індикатор дорівнює ``0``.
 
